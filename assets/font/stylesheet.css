@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Gordita Fuerte St';
+    src: url('GorditaFuerteSt.woff2') format('woff2'),
+        url('GorditaFuerteSt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
