@@ -1,12 +1,14 @@
 .dropdown {
     position: absolute;
     left: 0;
+    width: min(1240px, 100%);
     padding-top: 54px;
-   opacity: 0;
-   transition: 0.5s;
+    // opacity: 0;
+    transition: 0.5s;
 
     &__inner {
         position: relative;
+        max-height: min(582px, 100vh - 158px);
         padding: 30px;
         border-radius: 20px;
         background: var(--dropdown-bg-color);
@@ -19,6 +21,81 @@
             left: var(--arrow-left-pos);
             translate: -50%;
             filter: var(--dropdown-arrow-color);
+        }
+    }
+}
+
+.top-menu {
+    height: 100%;
+
+    &__main {
+        width: 292px;
+        height: 100%;
+        border-right: 1px solid var(--top-menu-border-color);
+    }
+}
+
+.menu-column {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+
+    &__icon {
+        // k để icon bị méo
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        position: relative;
+    }
+
+    &__icon--1 {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+    }
+
+    &__icon--2 {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 24px;
+        height: 24px;
+        object-fit: cover;
+    }
+
+    &__content {
+        // chiếm hết độ rộng còn lại của container
+        flex: 1;
+    }
+
+    &__heading {
+        // color: var(--menu-column-heading-color);
+
+        /* Medium 16 */
+        margin-top: 4px;
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 150%; /* 150% */
+    }
+
+    &__list {
+        // paadding 7px bị ảnh hưởng kích thước lấy 26 - 7 = 19px
+        margin-top: 19px;
+    }
+
+    &__link {
+        // color: var(--Secondary-Color-Secondary-1, #1a162e);
+        // cái chữ nó gắn để block cho nó có khoảng cách để di chuột vào
+        display: block;
+        /* Regular 14 */
+        // các thẻ a cách nhau 14px trên và dưới lấy 14 / 2 ra padding
+        padding: 7px 0;
+        font-size: 1.4rem;
+        line-height: 142.857%; /* 142.857% */
+
+        &:hover {
+            color: #0071dc;
+            font-weight: 500;
         }
     }
 }
